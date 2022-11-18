@@ -5,6 +5,7 @@ namespace ApiMySqlDocker.Entities
         public int Id { get; set; }
         public string Nome { get; set; }
         //TODO Salva CPF com Hash
+        public string Cpf { get; set; }
         public string Logradouro { get; set; }
         public string Bairro { get; set; }
         public string Cidade { get; set; }
@@ -12,7 +13,7 @@ namespace ApiMySqlDocker.Entities
         public string Telefone { get; set; }
         public string Tipo_Sanguineo { get; set; }
         public string Religiao { get; set; }
-        public bool Status { get; set; }
+        public bool Status { get; set; } = true;
 
     }
 }

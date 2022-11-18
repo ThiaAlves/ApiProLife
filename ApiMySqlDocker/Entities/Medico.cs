@@ -25,7 +25,7 @@ namespace ApiMySqlDocker.Entities
         public string Nome { get; set; }
         public string Especialidade { get; set; }
         public string Foto { get; set; }
-        public bool Status { get; set; }
+        public bool Status { get; set; } = true;
         public int ClinicaId { get; set; }
         public Clinica Clinica { get; set; }
 

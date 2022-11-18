@@ -10,7 +10,7 @@ namespace ApiMySqlDocker.Entities
         public int Numero {get; set; }
         public string Latitude {get; set; }
         public string Longitude {get; set; }
-        public bool Status {get; set; }
+        public bool Status {get; set; } = true;
 
     }
 }

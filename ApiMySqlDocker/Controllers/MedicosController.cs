@@ -3,17 +3,20 @@ using ApiMySqlDocker.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Authorization;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace ApiMySqlDocker.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class MedicosController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+
         public MedicosController(ApplicationDbContext context)
         {
             _context = context;

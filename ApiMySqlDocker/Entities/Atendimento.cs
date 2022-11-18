@@ -1,4 +1,6 @@
-﻿namespace ApiMySqlDocker.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ApiMySqlDocker.Entities
 {
     public class Atendimento
     {
@@ -43,10 +45,5 @@
             Cliente = cliente;
             Medico = medico;
         }
-
-
-
-
-
     }
 }
