@@ -26,6 +26,12 @@ namespace ApiMySqlDocker.Controllers
             return await _context.Medicos.ToListAsync();
         }
 
+        [HttpGet("GetMedicosByClinica/{clinicaId}")]
+        public async Task<ActionResult<IEnumerable<Medico>>> GetMedicosByClinica(int clinicaId)
+        {
+            return await _context.Medicos.Where(m => m.ClinicaId == clinicaId).ToListAsync();
+        }
+
         // GET: api/Medicos/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Medico>> GetMedico(int id)

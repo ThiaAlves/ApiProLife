@@ -12,5 +12,8 @@ namespace ApiMySqlDocker.DataContext
         public DbSet<Product> Products { get; set; }
         public DbSet<Clinica> Clinicas {get; set; }
         public DbSet<Medico> Medicos {get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Atendimento> Atendimentos { get; set; }
     }
 }
