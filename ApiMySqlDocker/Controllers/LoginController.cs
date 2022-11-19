@@ -29,11 +29,11 @@ namespace ApiMySqlDocker.Controllers
 
 
         [HttpPost]
-        public IActionResult Login(string email, string senha)
+        public IActionResult Login([FromBody] Usuario usuario)
         {
            
-            var user = _context.Usuarios.Where(x => x.Email == email).FirstOrDefault();
-
+            var user = _context.Usuarios.Where(x => x.Email == usuario.Email).FirstOrDefault();
+            
 
             //BCrypt.Net.BCrypt.Verify(senha, x.Senha)
             //var user = UsuarioRepository.Get(usuario.Email ,usuario.Senha);
@@ -43,7 +43,7 @@ namespace ApiMySqlDocker.Controllers
                 return NotFound(new { message = "Usuário ou senha inválidos" });
             }
 
-            if (BCrypt.Net.BCrypt.Verify(senha, user.Senha) == true)
+            if (BCrypt.Net.BCrypt.Verify(usuario.Senha, user.Senha) == true)
             {
                 // return Ok(new { token = GerarToken() });
                 return Ok(new
@@ -53,9 +53,6 @@ namespace ApiMySqlDocker.Controllers
             }
 
                return NotFound(new { message = "Usuário ou senha inválidos" });
-
-
-
         }
 
         private string GerarToken()
