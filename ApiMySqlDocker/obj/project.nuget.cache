@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "cNz7+0o6YHWWO122gTGh6/R/1llNNXyJaHdxKYLusa6cJ0EXImKqPOw6WfRbYsUjz9GaGAjy3lrgwZtOqHGiTQ==",
+  "dgSpecHash": "YE51gtV9mrVdmxC5Wk+GPSUTqP5Zd3UC3dQj5Vw385PXIEi4kzOdf1IGugPbajz9ZOYk69qNjzCaWZAYBZJuQg==",
   "success": true,
   "projectFilePath": "C:\\Users\\thiag\\Desktop\\HACKATHON\\ApiMySqlDocker\\ApiMySqlDocker\\ApiMySqlDocker.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\thiag\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\thiag\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\thiag\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.0\\microsoft.aspnetcore.authentication.jwtbearer.3.1.0.nupkg.sha512",
     "C:\\Users\\thiag\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\thiag\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\thiag\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\5.0.0\\microsoft.aspnetcore.razor.language.5.0.0.nupkg.sha512",

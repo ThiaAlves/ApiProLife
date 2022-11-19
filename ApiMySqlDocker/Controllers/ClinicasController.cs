@@ -1,5 +1,6 @@
 using ApiMySqlDocker.DataContext;
 using ApiMySqlDocker.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -21,6 +22,7 @@ namespace ApiMySqlDocker.Controllers
 
         // GET: api/Clinicas
         [HttpGet]
+        [Authorize(Roles = "administrador")]
         public async Task<ActionResult<IEnumerable<Clinica>>> GetClinicas()
         {
             return await _context.Clinicas.ToListAsync();
@@ -28,6 +30,7 @@ namespace ApiMySqlDocker.Controllers
 
         // GET: api/Clinicas/5
         [HttpGet("{id}")]
+        [Authorize(Roles = "administrador")]
         public async Task<ActionResult<Clinica>> GetClinica(int id)
         {
             var Clinica = await _context.Clinicas.FindAsync(id);
@@ -41,6 +44,7 @@ namespace ApiMySqlDocker.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "administrador")]
         public async Task<IActionResult> PutClinica(int id, Clinica Clinica)
         {
             if (id != Clinica.Id)
@@ -70,6 +74,7 @@ namespace ApiMySqlDocker.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "administrador")]
         public async Task<ActionResult<Clinica>> PostClinica(Clinica Clinica)
         {
             _context.Clinicas.Add(Clinica);
@@ -79,6 +84,7 @@ namespace ApiMySqlDocker.Controllers
         }
 
         [HttpDelete("{id}")]
+        [Authorize(Roles = "administrador")]
         public async Task<IActionResult> DeleteClinica(int id)
         {
             var Clinica = await _context.Clinicas.FindAsync(id);

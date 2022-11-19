@@ -1,5 +1,8 @@
+using ApiMySqlDocker.Config;
 using ApiMySqlDocker.DataContext;
 using ApiMySqlDocker.Entities;
+using BCrypt.Net;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -72,7 +75,14 @@ namespace ApiMySqlDocker.Controllers
         [HttpPost]
         public async Task<ActionResult<Usuario>> PostUsuario(Usuario Usuario)
         {
-            _context.Usuarios.Add(Usuario);
+            _context.Usuarios.Add(new Usuario
+            {
+                Nome = Usuario.Nome,
+                Tipo_Usuario = Usuario.Tipo_Usuario,
+                Email = Usuario.Email,
+                Senha = BCrypt.Net.BCrypt.HashPassword(Usuario.Senha),
+                Status = true
+            });
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetUsuario", new { id = Usuario.Id }, Usuario);

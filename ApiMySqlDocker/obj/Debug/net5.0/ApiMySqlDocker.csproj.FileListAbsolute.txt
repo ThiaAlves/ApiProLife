@@ -139,3 +139,5 @@ C:\Users\thiag\Desktop\HACKATHON\ApiMySqlDocker\ApiMySqlDocker\obj\Debug\net5.0\
 C:\Users\thiag\Desktop\HACKATHON\ApiMySqlDocker\ApiMySqlDocker\obj\Debug\net5.0\ApiMySqlDocker.pdb
 C:\Users\thiag\Desktop\HACKATHON\ApiMySqlDocker\ApiMySqlDocker\obj\Debug\net5.0\ApiMySqlDocker.genruntimeconfig.cache
 C:\Users\thiag\Desktop\HACKATHON\ApiMySqlDocker\ApiMySqlDocker\obj\Debug\net5.0\ref\ApiMySqlDocker.dll
+C:\Users\thiag\Desktop\HACKATHON\ApiMySqlDocker\ApiMySqlDocker\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\thiag\Desktop\HACKATHON\ApiMySqlDocker\ApiMySqlDocker\bin\Debug\net5.0\BCrypt.Net-Next.dll

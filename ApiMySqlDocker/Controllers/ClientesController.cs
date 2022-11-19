@@ -1,5 +1,6 @@
 using ApiMySqlDocker.DataContext;
 using ApiMySqlDocker.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace ApiMySqlDocker.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class ClientesController : ControllerBase
