@@ -53,9 +53,6 @@ namespace ApiMySqlDocker.Controllers
             }
 
                return NotFound(new { message = "Usuário ou senha inválidos" });
-
-
-
         }
 
         private string GerarToken()
