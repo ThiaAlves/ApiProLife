@@ -55,6 +55,9 @@ namespace ApiMySqlDocker
             });
             });
 
+            //Adiciona CORS
+            services.AddCors();
+
             //Adiciona JWT
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
             services.AddAuthentication(x =>
@@ -86,6 +89,13 @@ namespace ApiMySqlDocker
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiMySqlDocker v1"));
             }
+
+            //global cors policy
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials()); // allow credentials
 
             app.UseRouting();
 
