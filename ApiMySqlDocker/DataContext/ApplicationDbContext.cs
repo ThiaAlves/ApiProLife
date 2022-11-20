@@ -9,7 +9,6 @@ namespace ApiMySqlDocker.DataContext
         {
             this.Database.EnsureCreated();
         }
-        public DbSet<Product> Products { get; set; }
         public DbSet<Clinica> Clinicas {get; set; }
         public DbSet<Medico> Medicos {get; set; }
         public DbSet<Cliente> Clientes { get; set; }

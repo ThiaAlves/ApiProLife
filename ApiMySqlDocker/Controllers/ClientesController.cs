@@ -1,3 +1,4 @@
+using ApiMySqlDocker.Config;
 using ApiMySqlDocker.DataContext;
 using ApiMySqlDocker.Entities;
 using Microsoft.AspNetCore.Authorization;
@@ -39,6 +40,10 @@ namespace ApiMySqlDocker.Controllers
                 return NotFound();
             }
 
+            //Descriptografa o CPF
+            Cliente.Cpf = Criptografia.AesDecrypt(Cliente.Cpf);
+            Cliente.Religiao = Criptografia.AesDecrypt(Cliente.Religiao);
+
             return Cliente;
         }
 
@@ -74,7 +79,23 @@ namespace ApiMySqlDocker.Controllers
         [HttpPost]
         public async Task<ActionResult<Cliente>> PostCliente(Cliente Cliente)
         {
-            _context.Clientes.Add(Cliente);
+            _context.Clientes.Add(
+                new Cliente
+                {
+                    Nome = Cliente.Nome,
+                    Cpf = Criptografia.AesEncrypt(Cliente.Cpf),
+                    Telefone = Cliente.Telefone,
+                    Logradouro = Cliente.Logradouro,
+                    Cidade = Cliente.Cidade,
+                    Estado = Cliente.Estado,
+                    Bairro = Cliente.Bairro,
+                    Cep = Cliente.Cep,
+                    Numero = Cliente.Numero,
+                    Tipo_Sanguineo = Cliente.Tipo_Sanguineo,
+                    Religiao = Criptografia.AesEncrypt(Cliente.Religiao),
+                    Status = Cliente.Status
+                }
+                );
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetCliente", new { id = Cliente.Id }, Cliente);
