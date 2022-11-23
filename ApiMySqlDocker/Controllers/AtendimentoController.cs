@@ -1,4 +1,5 @@
-﻿using ApiMySqlDocker.DataContext;
+﻿using ApiMySqlDocker.Config;
+using ApiMySqlDocker.DataContext;
 using ApiMySqlDocker.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -27,11 +28,21 @@ namespace ApiMySqlDocker.Controllers
         {
 
             //Retorna atendimentos com inner join cliente e médico
-            return await _context.Atendimentos
+
+            //Formata atributos do Cliente CPF e religiao
+            var atendimentos = await _context.Atendimentos
                 .Include(a => a.Cliente)
+                .Include(a => a.Medico)
                 .Include(a => a.Clinica)
                 .ToListAsync();
 
+            foreach (var atendimento in atendimentos)
+            {
+                atendimento.Cliente.Cpf = Criptografia.AesDecrypt(atendimento.Cliente.Cpf);
+                atendimento.Cliente.Religiao = Criptografia.AesDecrypt(atendimento.Cliente.Religiao);
+            }
+
+            return atendimentos;
             //return await _context.Atendimentos.ToListAsync();
         }
         
@@ -106,11 +117,20 @@ namespace ApiMySqlDocker.Controllers
         [HttpGet("GetAtendimentosByClinica/{id}")]
         public async Task<ActionResult<IEnumerable<Atendimento>>> GetAtendimentosPorClinica(int id)
         {
-            return await _context.Atendimentos
+            var atendimentos = await _context.Atendimentos
                 .Include(a => a.Cliente)
+                .Include(a => a.Medico)
                 .Include(a => a.Clinica)
                 .Where(a => a.ClinicaId == id)
                 .ToListAsync();
+
+            foreach (var atendimento in atendimentos)
+            {
+                atendimento.Cliente.Cpf = Criptografia.AesDecrypt(atendimento.Cliente.Cpf);
+                atendimento.Cliente.Religiao = Criptografia.AesDecrypt(atendimento.Cliente.Religiao);
+            }
+
+            return atendimentos;
         }
 
         private bool AtendimentoExists(int id)
