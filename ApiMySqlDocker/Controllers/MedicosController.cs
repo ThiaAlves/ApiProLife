@@ -26,7 +26,7 @@ namespace ApiMySqlDocker.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Medico>>> GetMedicos()
         {
-            return await _context.Medicos.ToListAsync();
+            return await _context.Medicos.Include(m => m.Clinica).ToListAsync();
         }
 
         [HttpGet("GetMedicosByClinica/{clinicaId}")]

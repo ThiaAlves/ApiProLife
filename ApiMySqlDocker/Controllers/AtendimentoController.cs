@@ -25,9 +25,16 @@ namespace ApiMySqlDocker.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Atendimento>>> GetAtendimentos()
         {
-            return await _context.Atendimentos.ToListAsync();
-        }
 
+            //Retorna atendimentos com inner join cliente e médico
+            return await _context.Atendimentos
+                .Include(a => a.Cliente)
+                .Include(a => a.Clinica)
+                .ToListAsync();
+
+            //return await _context.Atendimentos.ToListAsync();
+        }
+        
         // GET: api/Atendimentos/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Atendimento>> GetAtendimento(int id)
@@ -93,6 +100,17 @@ namespace ApiMySqlDocker.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent();
+        }
+
+        //Rota atendimentos por Clínica
+        [HttpGet("GetAtendimentosByClinica/{id}")]
+        public async Task<ActionResult<IEnumerable<Atendimento>>> GetAtendimentosPorClinica(int id)
+        {
+            return await _context.Atendimentos
+                .Include(a => a.Cliente)
+                .Include(a => a.Clinica)
+                .Where(a => a.ClinicaId == id)
+                .ToListAsync();
         }
 
         private bool AtendimentoExists(int id)
