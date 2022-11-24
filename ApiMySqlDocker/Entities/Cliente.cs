@@ -1,3 +1,7 @@
+using ApiMySqlDocker.Domain.Interfaces;
+using ApiMySqlDocker.Domain.Validations;
+
+
 namespace ApiMySqlDocker.Entities
 {
     public class Cliente
@@ -16,6 +20,6 @@ namespace ApiMySqlDocker.Entities
         public string Tipo_Sanguineo { get; set; }
         public string Religiao { get; set; }
         public bool Status { get; set; } = true;
+}
 
-    }
 }
