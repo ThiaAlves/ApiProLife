@@ -10,11 +10,10 @@ namespace ApiMySqlDocker.Testes
     public class MedicoInserirCommandTests
     {
         [DataTestMethod]
-        [DataRow("Nome")]
-        [DataRow("Outro Nome")]
-        public void DadoUmComandoValidoRetorna(string nome)
+        [DataRow("Nome", "Pediatria")]
+        public void DadoUmComandoValidoRetorna(string nome, string especialidade)
         {
-            var command = new MedicoInserirCommand(nome);
+            var command = new MedicoInserirCommand(nome, especialidade);
 
             command.Validate();
 

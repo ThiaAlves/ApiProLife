@@ -10,10 +10,10 @@ namespace ApiMySqlDocker.Testes
     public class UsuarioInserirCommandTests
     {
         [DataTestMethod]
-        [DataRow("Nome")]
-        public void DadoUmComandoValidoRetorna(string nome)
+        [DataRow("Nome", "administrador", "admin@gmail.com")]
+        public void DadoUmComandoValidoRetorna(string nome, string tipo_usuario, string email)
         {
-            var command = new UsuarioInserirCommand(nome);
+            var command = new UsuarioInserirCommand(nome, tipo_usuario, email);
 
             command.Validate();
 

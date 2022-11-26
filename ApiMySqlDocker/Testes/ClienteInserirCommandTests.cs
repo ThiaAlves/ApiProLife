@@ -7,11 +7,10 @@ namespace ApiMySqlDocker.Testes
     public class ClienteInserirCommandTests
     {
         [DataTestMethod]
-        [DataRow("Nome")]
-        [DataRow("Outro Nome")]
-        public void DadoUmComandoValidoRetorna(string nome)
+        [DataRow("Nome", "12345678901")]
+        public void DadoUmComandoValidoRetorna(string nome, string cpf)
         {
-            var command = new ClienteInserirCommand(nome);
+            var command = new ClienteInserirCommand(nome, cpf);
 
             command.Validate();
 
