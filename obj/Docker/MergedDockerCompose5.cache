@@ -1,0 +1,103 @@
+name: dockercompose11781198039523738482
+services:
+  apimysqldocker:
+    build:
+      context: C:\Users\thiag\Desktop\HACKATHON\agora_vai\ApiProLife
+      dockerfile: ApiMySqlDocker/Dockerfile
+      labels:
+        com.microsoft.created-by: visual-studio
+        com.microsoft.visual-studio.project-name: ApiMySqlDocker
+      target: base
+    container_name: apiaspn
+    depends_on:
+      database:
+        condition: service_started
+    entrypoint:
+    - tail
+    - -f
+    - /dev/null
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_LOGGING__CONSOLE__DISABLECOLORS: "true"
+      DBHOST: database
+      DOTNET_USE_POLLING_FILE_WATCHER: "1"
+      NUGET_FALLBACK_PACKAGES: ""
+    image: apimysqldocker:dev
+    labels:
+      com.microsoft.visualstudio.debuggee.arguments: ' --additionalProbingPath /root/.nuget/packages  "/app/bin/Debug/net5.0/ApiMySqlDocker.dll"'
+      com.microsoft.visualstudio.debuggee.killprogram: /bin/sh -c "if PID=$$(pidof
+        dotnet); then kill $$PID; fi"
+      com.microsoft.visualstudio.debuggee.program: dotnet
+      com.microsoft.visualstudio.debuggee.workingdirectory: /app
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      published: "5000"
+      protocol: tcp
+    restart: always
+    tty: true
+    volumes:
+    - type: bind
+      source: C:\Users\thiag\Desktop\HACKATHON\agora_vai\ApiProLife\ApiMySqlDocker
+      target: /app
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\thiag\Desktop\HACKATHON\agora_vai\ApiProLife
+      target: /src
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\thiag\vsdbg\vs2017u5
+      target: /remote_debugger
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\thiag\.nuget\packages\
+      target: /root/.nuget/packages
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\thiag\AppData\Roaming/ASP.NET/Https
+      target: /root/.aspnet/https
+      read_only: true
+      bind:
+        create_host_path: true
+    - type: bind
+      source: C:\Users\thiag\AppData\Roaming/Microsoft/UserSecrets
+      target: /root/.microsoft/usersecrets
+      read_only: true
+      bind:
+        create_host_path: true
+  database:
+    container_name: mysqldb
+    environment:
+      MYSQL_DATABASE: db_clinica
+      MYSQL_PASSWORD: "123456"
+      MYSQL_ROOT_PASSWORD: "123456"
+      MYSQL_USER: clinica
+    expose:
+    - "3306"
+    image: mysql:8.0.22
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 3306
+      published: "3306"
+      protocol: tcp
+    restart: always
+    volumes:
+    - type: volume
+      source: db-volume
+      target: /var/lib/mysql
+      volume: {}
+networks:
+  default:
+    name: dockercompose11781198039523738482_default
+volumes:
+  db-volume:
+    name: dockercompose11781198039523738482_db-volume

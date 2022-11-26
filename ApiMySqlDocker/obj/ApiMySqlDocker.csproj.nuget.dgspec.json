@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thiag\\Desktop\\HACKATHON\\ApiMySqlDocker\\ApiMySqlDocker\\ApiMySqlDocker.csproj": {}
+    "C:\\Desenvolvimento\\C#\\ApiProLife\\ApiMySqlDocker\\ApiMySqlDocker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thiag\\Desktop\\HACKATHON\\ApiMySqlDocker\\ApiMySqlDocker\\ApiMySqlDocker.csproj": {
+    "C:\\Desenvolvimento\\C#\\ApiProLife\\ApiMySqlDocker\\ApiMySqlDocker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thiag\\Desktop\\HACKATHON\\ApiMySqlDocker\\ApiMySqlDocker\\ApiMySqlDocker.csproj",
+        "projectUniqueName": "C:\\Desenvolvimento\\C#\\ApiProLife\\ApiMySqlDocker\\ApiMySqlDocker.csproj",
         "projectName": "ApiMySqlDocker",
-        "projectPath": "C:\\Users\\thiag\\Desktop\\HACKATHON\\ApiMySqlDocker\\ApiMySqlDocker\\ApiMySqlDocker.csproj",
-        "packagesPath": "C:\\Users\\thiag\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thiag\\Desktop\\HACKATHON\\ApiMySqlDocker\\ApiMySqlDocker\\obj\\",
+        "projectPath": "C:\\Desenvolvimento\\C#\\ApiProLife\\ApiMySqlDocker\\ApiMySqlDocker.csproj",
+        "packagesPath": "C:\\Users\\Alarcon\\.nuget\\packages\\",
+        "outputPath": "C:\\Desenvolvimento\\C#\\ApiProLife\\ApiMySqlDocker\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\thiag\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alarcon\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,6 +44,14 @@
               "target": "Package",
               "version": "[4.0.3, )"
             },
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.2.10, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.2.10, )"
+            },
             "Microsoft.AspNet.Cors": {
               "target": "Package",
               "version": "[5.2.9, )"
@@ -68,6 +76,10 @@
               "target": "Package",
               "version": "[5.0.6, )"
             },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.4.0, )"
+            },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.10.13, )"
@@ -83,6 +95,18 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.1.4, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "coverlet.msbuild": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.2.0, )"
             }
           },
           "imports": [
@@ -91,11 +115,28 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.17, 5.0.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -104,7 +145,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

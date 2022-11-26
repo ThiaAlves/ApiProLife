@@ -1,0 +1,23 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "apimysqldocker": "StartWithoutDebugging",
+        "database": "StartWithoutDebugging"
+      }
+    },
+    "apimysqldocker": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "composeLaunchAction": "LaunchBrowser",
+      "composeLaunchServiceName": "apimysqldocker",
+      "composeLaunchUrl": "{Scheme}://localhost:{ServicePort}/swagger",
+      "serviceActions": {
+        "apimysqldocker": "StartDebugging",
+        "database": "StartWithoutDebugging"
+      }
+    }
+  }
+}
