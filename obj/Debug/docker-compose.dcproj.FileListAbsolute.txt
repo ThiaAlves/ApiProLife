@@ -62,3 +62,4 @@ C:\Users\thiag\Desktop\HACKATHON\agora_vai\ApiProLife\bin\Debug\ru\Microsoft.Tes
 C:\Users\thiag\Desktop\HACKATHON\agora_vai\ApiProLife\bin\Debug\tr\Microsoft.TestPlatform.CoreUtilities.resources.dll
 C:\Users\thiag\Desktop\HACKATHON\agora_vai\ApiProLife\bin\Debug\zh-Hans\Microsoft.TestPlatform.CoreUtilities.resources.dll
 C:\Users\thiag\Desktop\HACKATHON\agora_vai\ApiProLife\bin\Debug\zh-Hant\Microsoft.TestPlatform.CoreUtilities.resources.dll
+C:\Users\thiag\Documents\ApiProLife-pedro\ApiProLife\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache

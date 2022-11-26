@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GerS+OGCYMQlH9P4YQOY7s4uIh/mq29dF5h4co0Yipbhj09YCGdsdhr1Yfc6UE03bQZAgUpUcgr+9MJW2/CtJg==",
+  "dgSpecHash": "dTm0P7sS9Pv1CuGoZvvFn/Qjv3UhPCRttiFTmH8WBOWTaNOK8Db/2+6OVN4hTzizxdBxcs/7cCtoxrFOqjmuqw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\thiag\\Desktop\\HACKATHON\\agora_vai\\ApiProLife\\ApiMySqlDocker\\ApiMySqlDocker.csproj",
+  "projectFilePath": "C:\\Users\\thiag\\Documents\\ApiProLife-pedro\\ApiProLife\\ApiMySqlDocker\\ApiMySqlDocker.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thiag\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\thiag\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",

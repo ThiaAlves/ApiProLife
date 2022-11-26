@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace ApiMySqlDocker.Domain.Validations
 {
@@ -6,7 +7,7 @@ namespace ApiMySqlDocker.Domain.Validations
     {
         private readonly List<string> _notificacoes;
 
-        protected Notificavel()
+        public Notificavel()
         {
             _notificacoes = new List<string>();
         }
@@ -18,7 +19,8 @@ namespace ApiMySqlDocker.Domain.Validations
 
         public IReadOnlyCollection<string> Notificacoes => _notificacoes;
 
-        public bool Valido => _notificacoes.Count == 0;
-        
+        public bool isInvalida => _notificacoes.Any();
+
+        public bool isValida => !isInvalida;
     }
 }

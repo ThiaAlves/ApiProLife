@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thiag\\Desktop\\HACKATHON\\agora_vai\\ApiProLife\\ApiMySqlDocker\\ApiMySqlDocker.csproj": {}
+    "C:\\Users\\thiag\\Documents\\ApiProLife-pedro\\ApiProLife\\ApiMySqlDocker\\ApiMySqlDocker.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thiag\\Desktop\\HACKATHON\\agora_vai\\ApiProLife\\ApiMySqlDocker\\ApiMySqlDocker.csproj": {
+    "C:\\Users\\thiag\\Documents\\ApiProLife-pedro\\ApiProLife\\ApiMySqlDocker\\ApiMySqlDocker.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thiag\\Desktop\\HACKATHON\\agora_vai\\ApiProLife\\ApiMySqlDocker\\ApiMySqlDocker.csproj",
+        "projectUniqueName": "C:\\Users\\thiag\\Documents\\ApiProLife-pedro\\ApiProLife\\ApiMySqlDocker\\ApiMySqlDocker.csproj",
         "projectName": "ApiMySqlDocker",
-        "projectPath": "C:\\Users\\thiag\\Desktop\\HACKATHON\\agora_vai\\ApiProLife\\ApiMySqlDocker\\ApiMySqlDocker.csproj",
+        "projectPath": "C:\\Users\\thiag\\Documents\\ApiProLife-pedro\\ApiProLife\\ApiMySqlDocker\\ApiMySqlDocker.csproj",
         "packagesPath": "C:\\Users\\thiag\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thiag\\Desktop\\HACKATHON\\agora_vai\\ApiProLife\\ApiMySqlDocker\\obj\\",
+        "outputPath": "C:\\Users\\thiag\\Documents\\ApiProLife-pedro\\ApiProLife\\ApiMySqlDocker\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\thiag\\AppData\\Roaming\\NuGet\\NuGet.Config",
