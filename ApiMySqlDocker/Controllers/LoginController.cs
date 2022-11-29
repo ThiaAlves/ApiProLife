@@ -43,7 +43,10 @@ namespace ApiMySqlDocker.Controllers
                 return NotFound(new { message = "Usuário ou senha inválidos" });
             }
 
-            if (BCrypt.Net.BCrypt.Verify(usuario.Senha, user.Senha) == true)
+            
+            BCrypt.Net.BCrypt.GenerateSalt(13);
+
+            if (BCrypt.Net.BCrypt.Verify(usuario.Senha, user.Senha))
             {
                 // return Ok(new { token = GerarToken() });
                 return Ok(new
