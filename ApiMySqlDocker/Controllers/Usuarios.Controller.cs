@@ -50,6 +50,13 @@ namespace ApiMySqlDocker.Controllers
             {
                 return BadRequest();
             }
+            
+            
+            //Atualiza usuário criptografando a senha se não for nula
+            if (Usuario.Senha != null)
+            {
+                Usuario.Senha = BCrypt.Net.BCrypt.HashPassword(Usuario.Senha);
+            }
 
             _context.Entry(Usuario).State = EntityState.Modified;
 
