@@ -35,6 +35,12 @@ namespace ApiMySqlDocker.Controllers
                 .Include(a => a.Medico)
                 .Include(a => a.Clinica)
                 .ToListAsync();
+                
+            foreach (var atendimento in atendimentos)
+            {
+                atendimento.Cliente.Cpf = Criptografia.AesDecrypt(atendimento.Cliente.Cpf);
+                atendimento.Cliente.Religiao = Criptografia.AesDecrypt(atendimento.Cliente.Religiao);
+            }
 
             return atendimentos;
             //return await _context.Atendimentos.ToListAsync();
@@ -117,6 +123,12 @@ namespace ApiMySqlDocker.Controllers
                 .Include(a => a.Clinica)
                 .Where(a => a.ClinicaId == id)
                 .ToListAsync();
+                
+            foreach (var atendimento in atendimentos)
+            {
+                atendimento.Cliente.Cpf = Criptografia.AesDecrypt(atendimento.Cliente.Cpf);
+                atendimento.Cliente.Religiao = Criptografia.AesDecrypt(atendimento.Cliente.Religiao);
+            }
 
             return atendimentos;
         }
