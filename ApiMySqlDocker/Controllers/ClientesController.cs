@@ -53,6 +53,17 @@ namespace ApiMySqlDocker.Controllers
             {
                 return BadRequest();
             }
+            
+            //Atualiza cliente criptografando o CPF e a religião se não for nula
+            if (Cliente.Cpf != null)
+            {
+                Cliente.Cpf = Criptografia.AesEncrypt(Cliente.Cpf);
+            }
+
+            if (Cliente.Religiao != null)
+            {
+                Cliente.Religiao = Criptografia.AesEncrypt(Cliente.Religiao);
+            }
 
             _context.Entry(Cliente).State = EntityState.Modified;
 
